@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>静态文件</title>
+    <!-- 
+    使用url_for函数引用静态CSS文件
+    url_for('static', filename='style.css') 会生成指向/static/style.css的URL
+    -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>静态文件示例</h1>
+    <!-- 使用CSS类名应用样式 -->
+    <p class="highlight">这是使用 CSS 样式的文字</p>
+    
+    <!-- 
+    使用url_for函数引用静态JavaScript文件
+    url_for('static', filename='script.js') 会生成指向/static/script.js的URL
+    -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

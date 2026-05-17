@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录</title>
+</head>
+<body>
+    <h1>登录表单</h1>
+    <!-- 
+    HTML表单示例：
+    - method="POST" 指定表单提交方式为POST
+    - 表单数据将发送到当前URL（/login）
+    - 每个输入字段的name属性用于在服务器端识别字段
+    -->
+    <form method="POST">
+        <div>
+            <label>用户名:</label>
+            <!-- 文本输入框，用于输入用户名 -->
+            <input type="text" name="username">
+        </div>
+        <div>
+            <label>密码:</label>
+            <!-- 密码输入框，输入内容会被隐藏 -->
+            <input type="password" name="password">
+        </div>
+        <!-- 提交按钮，点击后会将表单数据发送到服务器 -->
+        <button type="submit">登录</button>
+    </form>
+</body>
+</html>

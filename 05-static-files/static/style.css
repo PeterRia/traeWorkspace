@@ -1,0 +1,16 @@
+/* 全局样式 */
+body {
+    background-color: #f0f0f0; /* 浅灰色背景 */
+    font-family: Arial, sans-serif; /* 使用Arial字体，无衬线字体作为备选 */
+}
+
+/* 标题样式 */
+h1 {
+    color: #333; /* 深灰色文字 */
+}
+
+/* 高亮文本样式 */
+.highlight {
+    color: #007bff; /* 蓝色文字 */
+    font-size: 18px; /* 字体大小18像素 */
+}
