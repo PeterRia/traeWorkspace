@@ -1,26 +1,28 @@
 # 学习项目集合
 
-这是一个综合性的学习项目仓库，包含 Flask Web 开发和 GitHub 使用的完整学习路径。
+这是一个综合性的学习项目仓库，使用 [uv](https://docs.astral.sh/uv/) 管理 Python 依赖与项目运行。
 
 ## 📁 项目结构
 
 ```
-├── Flask_Learning/        # Flask Web 框架学习
-│   ├── 01-hello-world/    # 基础入门示例
-│   ├── 02-routing/        # 路由基础
-│   ├── 03-http-methods/   # HTTP 方法
-│   ├── 04-templates/      # 模板渲染
-│   ├── 05-static-files/   # 静态文件管理
-│   ├── 06-url-parameters/ # URL 参数
-│   ├── 07-query-parameters/ # 查询参数
-│   ├── 08-forms/          # 表单处理
-│   ├── 09-redirects/      # 重定向
-│   ├── 10-sessions/       # Session 会话
-│   ├── 11-sqlite-basic/   # SQLite 数据库
+├── Flask_Learning/           # Flask Web 框架学习
+│   ├── 01-hello-world/       # 基础入门示例
+│   ├── 02-routing/           # 路由基础
+│   ├── 03-http-methods/      # HTTP 方法
+│   ├── 04-templates/         # 模板渲染
+│   ├── 05-static-files/      # 静态文件管理
+│   ├── 06-url-parameters/    # URL 参数
+│   ├── 07-query-parameters/  # 查询参数
+│   ├── 08-forms/             # 表单处理
+│   ├── 09-redirects/         # 重定向
+│   ├── 10-sessions/          # Session 会话
+│   ├── 11-sqlite-basic/      # SQLite 数据库
 │   ├── FLASK_LEARNING_ROADMAP.md  # 学习路线图
 │   └── FLASK_LEARNING_PPT.md      # PPT 文稿
-├── github-learning/       # GitHub 学习指南
-└── README.md              # 项目总览
+├── Vibe_Coding_Learning/     # Vibe Coding 系统化学习
+├── github-learning/          # GitHub 学习指南
+├── pyproject.toml            # uv 项目配置
+└── README.md                 # 项目总览
 ```
 
 ## 🚀 学习模块
@@ -55,28 +57,57 @@ GitHub 使用指南，包含版本控制基础和协作开发知识。
 **学习资源：**
 - 📖 学习指南：`github-learning/GITHUB_LEARNING_GUIDE.md`
 
-## 🛠️ 环境要求
+### 3. Vibe Coding 学习模块
 
-- Python 3.10+
-- Flask 最新版本
+基于 Easy-Vibe 官方教程的系统化 Vibe Coding 学习路径，覆盖从零基础到高级开发。
 
-## 📦 安装依赖
+**学习资源：**
+- � 学习总览：`Vibe_Coding_Learning/README.md`
 
-```bash
-cd Flask_Learning
-pip install flask
+---
+
+## �️ 环境要求
+
+- Python 3.8+
+- [uv](https://docs.astral.sh/uv/) 包管理器
+
+### 安装 uv
+
+```powershell
+# Windows (PowerShell)
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-## 🔧 运行示例
+```bash
+# macOS / Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
 
-每个 Flask 示例都是独立的应用，进入对应目录运行：
+## � 快速开始
 
 ```bash
-cd Flask_Learning/01-hello-world
-python app.py
+# 1. 克隆项目
+git clone https://github.com/PeterRia/traeWorkspace.git
+cd traeWorkspace
+
+# 2. uv 自动创建虚拟环境并安装依赖
+uv sync
+
+# 3. 运行 Flask 示例（以 hello-world 为例）
+uv run python Flask_Learning/01-hello-world/app.py
 ```
 
 然后访问 http://localhost:5000
+
+## 🔧 常用 uv 命令
+
+| 命令 | 说明 |
+|------|------|
+| `uv sync` | 同步依赖，创建虚拟环境 |
+| `uv run python <脚本>` | 在虚拟环境中运行 Python 脚本 |
+| `uv add <包名>` | 添加新依赖 |
+| `uv remove <包名>` | 移除依赖 |
+| `uv lock --upgrade` | 升级所有依赖到最新版 |
 
 ## 📚 学习建议
 
@@ -89,8 +120,9 @@ python app.py
 
 - 代码保持简洁，专注于核心知识点
 - 每个示例独立运行，互不依赖
-- 建议使用虚拟环境管理依赖
+- 使用 `uv run python` 替代直接 `python` 以确保在虚拟环境中运行
+- 运行其他示例只需替换路径：`uv run python Flask_Learning/<目录名>/app.py`
 
 ---
 
-**Happy Coding!** 🎉
+**Happy Coding!**
