@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深度驿站</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav class="white nav-extended">
+            <div class="nav-wrapper container">
+                <a href="#" class="brand-logo black-text">深度驿站</a>
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger black-text">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#" class="black-text">首页</a></li>
+                    <li><a href="#" class="black-text">标签</a></li>
+                    <li><a href="#" class="black-text">分类</a></li>
+                    <li><a href="#" class="black-text">归档</a></li>
+                    <li><a href="#" class="black-text">关于</a></li>
+                    <li><a href="#" class="black-text">留言板</a></li>
+                    <li><a href="#" class="black-text">友人帐</a></li>
+                    <li><a href="#" class="black-text">赞赏</a></li>
+                    <li>
+                        <a href="#" class="search-trigger black-text">
+                            <i class="material-icons">search</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 移动端侧边导航 -->
+    <ul class="sidenav" id="mobile-nav">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="images/banner/1.jpg" alt="背景">
+                </div>
+                <a href="#"><img class="circle" src="images/avatar/avatar.jpg" alt="头像"></a>
+                <a href="#"><span class="white-text name">深度驿站</span></a>
+                <a href="#"><span class="white-text email">电子科技大学 | 电子与通信工程 | 计算机视觉</span></a>
+            </div>
+        </li>
+        <li><a href="#"><i class="material-icons">home</i>首页</a></li>
+        <li><a href="#"><i class="material-icons">local_offer</i>标签</a></li>
+        <li><a href="#"><i class="material-icons">category</i>分类</a></li>
+        <li><a href="#"><i class="material-icons">archive</i>归档</a></li>
+        <li><a href="#"><i class="material-icons">person</i>关于</a></li>
+        <li><a href="#"><i class="material-icons">message</i>留言板</a></li>
+        <li><a href="#"><i class="material-icons">people</i>友人帐</a></li>
+        <li><a href="#"><i class="material-icons">favorite</i>赞赏</a></li>
+    </ul>
+
+    <!-- Banner 轮播区域 -->
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br><br>
+                <h1 class="header center white-text text-lighten-2">深度驿站</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light white-text">电子科技大学 | 电子与通信工程 | 计算机视觉</h5>
+                </div>
+                <div class="row center">
+                    <a href="#" class="btn-large waves-effect waves-light teal lighten-1">开始阅读</a>
+                </div>
+                <br><br>
+            </div>
+        </div>
+        <div class="parallax">
+            <img src="images/banner/1.jpg" alt="背景图片">
+        </div>
+    </div>
+
+    <!-- 置顶文章轮播 -->
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col s12">
+                    <div class="carousel carousel-slider center">
+                        <div class="carousel-item" href="#one!">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="images/banner/1.jpg">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title">博客开源</span>
+                                    <p>倒腾了一两周总算把个人博客网站完善了，目前这个版本使用应该是够了，当然还有一些优化项和功能增加后续在慢慢更新...</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">阅读更多</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" href="#two!">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="images/banner/2.jpg">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title">Python GUI之tkinter窗口视窗教程大集合</span>
+                                    <p>这篇文章是去年8月份学习python时顺便在博客园写的一篇笔记，现在搬运到hexo博客上来，主要针对新手...</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">阅读更多</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" href="#three!">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="images/banner/3.jpg">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title">Markdown Emoji表情语法速查表</span>
+                                    <p>这是一篇关于markdown中快速插入Emoji表情的语法速查表，以后写markdown想要插入emoji表情忘记语法了，可以快速查看...</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">阅读更多</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" href="#four!">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="images/banner/4.jpg">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title">Hexo+Github博客搭建完全教程</span>
+                                    <p>阅读须知:注意，这篇文章篇幅较长，主要针对新手，每一步很详细，所以可能会显得比较啰嗦...</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">阅读更多</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 推荐文章区域 -->
+    <div id="recommend-section" class="section">
+        <div class="container">
+            <div class="row">
+                <h4 class="center-align">推荐文章</h4>
+            </div>
+            <div class="row">
+                <!-- 软件安装与配置 -->
+                <div class="col s12 m6 l3">
+                    <div class="card medium hoverable">
+                        <div class="card-image">
+                            <img src="images/featureimages/19.jpg">
+                            <span class="card-title">软件安装与配置</span>
+                        </div>
+                        <div class="card-content">
+                            <p><a href="#">博客开源</a></p>
+                            <p class="truncate">倒腾了一两周总算把个人博客网站完善了，目前这个版本使用应该是够了...</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">阅读更多</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Python教程 -->
+                <div class="col s12 m6 l3">
+                    <div class="card medium hoverable">
+                        <div class="card-image">
+                            <img src="images/featureimages/22.jpg">
+                            <span class="card-title">Python教程</span>
+                        </div>
+                        <div class="card-content">
+                            <p><a href="#">Python GUI之tkinter窗口视窗教程大集合（看这篇就够了）</a></p>
+                            <p class="truncate">这篇文章是去年8月份学习python时顺便在博客园写的一篇笔记...</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">阅读更多</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 文章写作技巧 -->
+                <div class="col s12 m6 l3">
+                    <div class="card medium hoverable">
+                        <div class="card-image">
+                            <img src="images/featureimages/2.jpg">
+                            <span class="card-title">文章写作技巧</span>
+                        </div>
+                        <div class="card-content">
+                            <p><a href="#">Markdown Emoji表情语法速查表</a></p>
+                            <p class="truncate">这是一篇关于markdown中快速插入Emoji表情的语法速查表...</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">阅读更多</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 网站建设与优化 -->
+                <div class="col s12 m6 l3">
+                    <div class="card medium hoverable">
+                        <div class="card-image">
+                            <img src="images/featureimages/11.jpg">
+                            <span class="card-title">网站建设与优化</span>
+                        </div>
+                        <div class="card-content">
+                            <p><a href="#">Hexo+Github博客搭建完全教程</a></p>
+                            <p class="truncate">阅读须知:注意，这篇文章篇幅较长，主要针对新手，每一步很详细...</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">阅读更多</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 文章列表区域 -->
+    <div id="article-section" class="section">
+        <div class="container">
+            <div class="row">
+                <!-- 文章卡片 1 -->
+                <div class="col s12 m6">
+                    <div class="card horizontal hoverable">
+                        <div class="card-image">
+                            <img src="images/featureimages/19.jpg">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <a href="#" class="card-title">2020年，计算机视觉领域会哪些新的研究方向值得提前探索？</a>
+                                <p class="truncate">前言结合计算机视觉、机器人领域5大顶会（CVPR/ICCV/IROS/ICRA/ECCV），以及产业界的需求，总结3个当下热门及前沿的研究领域。</p>
+                                <div class="card-info">
+                                    <span class="date">2019-10-17</span>
+                                    <a href="#" class="category">计算机视觉</a>
+                                    <div class="tags">
+                                        <a href="#" class="tag">深度学习</a>
+                                        <a href="#" class="tag">计算机视觉</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 文章卡片 2 -->
+                <div class="col s12 m6">
+                    <div class="card horizontal hoverable">
+                        <div class="card-image">
+                            <img src="images/featureimages/22.jpg">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <a href="#" class="card-title">五年后的计算机视觉会是什么样？</a>
+                                <p class="truncate">前言对于计算机视觉研究者们来说，以当前的技术水平为基础，寻找突破点做提升改进是科研的主旋律。</p>
+                                <div class="card-info">
+                                    <span class="date">2019-10-16</span>
+                                    <a href="#" class="category">计算机视觉</a>
+                                    <div class="tags">
+                                        <a href="#" class="tag">深度学习</a>
+                                        <a href="#" class="tag">计算机视觉</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 文章卡片 3 -->
+                <div class="col s12 m6">
+                    <div class="card horizontal hoverable">
+                        <div class="card-image">
+                            <img src="images/featureimages/2.jpg">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <a href="#" class="card-title">深度学习环境配置常见问题集</a>
+                                <p class="truncate">anaconda 安装环境找不到 python 包例如用 conda install 命令安装 moviepy 这个 python 包时提示找不到相应的包...</p>
+                                <div class="card-info">
+                                    <span class="date">2019-09-22</span>
+                                    <a href="#" class="category">深度学习</a>
+                                    <div class="tags">
+                                        <a href="#" class="tag">Deep Learning</a>
+                                        <a href="#" class="tag">Conda</a>
+                                        <a href="#" class="tag">深度学习</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 文章卡片 4 -->
+                <div class="col s12 m6">
+                    <div class="card horizontal hoverable">
+                        <div class="card-image">
+                            <img src="images/featureimages/11.jpg">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <a href="#" class="card-title">为博客网站增加一个二级目录菜单</a>
+                                <p class="truncate">都知道，我们标题栏宽度有限，我们目录项目一多了，就放不下了，这时候你肯定就需要一个二级菜单来拆分一下项目...</p>
+                                <div class="card-info">
+                                    <span class="date">2019-09-18</span>
+                                    <a href="#" class="category">网站优化</a>
+                                    <div class="tags">
+                                        <a href="#" class="tag">博客</a>
+                                        <a href="#" class="tag">二级目录</a>
+                                        <a href="#" class="tag">Hexo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 文章卡片 5 -->
+                <div class="col s12 m6">
+                    <div class="card horizontal hoverable">
+                        <div class="card-image">
+                            <img src="images/featureimages/19.jpg">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <a href="#" class="card-title">网站图片压缩优化</a>
+                                <p class="truncate">本篇文章主要告诉大家如何通过对网站图片的优化来加快网站的访问速度以及友好程度。另外介绍了一款常用的客户端图片优化神器...</p>
+                                <div class="card-info">
+                                    <span class="date">2019-09-14</span>
+                                    <a href="#" class="category">网站建设与优化</a>
+                                    <div class="tags">
+                                        <a href="#" class="tag">Imagine</a>
+                                        <a href="#" class="tag">网站优化</a>
+                                        <a href="#" class="tag">图片压缩</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 文章卡片 6 -->
+                <div class="col s12 m6">
+                    <div class="card horizontal hoverable">
+                        <div class="card-image">
+                            <img src="images/featureimages/13.jpg">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <a href="#" class="card-title">Jsdelivr-Github-Cdn</a>
+                                <p class="truncate">使用 jsdelivr 访问 github 资源1.新建 github 仓库并使用 git 上传首先访问 https://github.com 新建自己的库...</p>
+                                <div class="card-info">
+                                    <span class="date">2019-09-14</span>
+                                    <a href="#" class="category">网站建设与优化</a>
+                                    <div class="tags">
+                                        <a href="#" class="tag">Github</a>
+                                        <a href="#" class="tag">Jsdelivr</a>
+                                        <a href="#" class="tag">cdn</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 文章卡片 7 -->
+                <div class="col s12 m6">
+                    <div class="card horizontal hoverable">
+                        <div class="card-image">
+                            <img src="images/featureimages/9.jpg">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <a href="#" class="card-title">网站预加载 JS 脚本</a>
+                                <p class="truncate">本篇文章介绍了一个网站预加载的脚本 instant.page，作用是可以预加载用户想访问的页面，当用户真正点击链接后...</p>
+                                <div class="card-info">
+                                    <span class="date">2019-09-14</span>
+                                    <a href="#" class="category">网站建设与优化</a>
+                                    <div class="tags">
+                                        <a href="#" class="tag">instant.page</a>
+                                        <a href="#" class="tag">网站预加载脚本</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 文章卡片 8 -->
+                <div class="col s12 m6">
+                    <div class="card horizontal hoverable">
+                        <div class="card-image">
+                            <img src="images/featureimages/4.jpg">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <a href="#" class="card-title">服务端口知识</a>
+                                <p class="truncate">1. 最常用的网页 80 和 443 端口1.1 端口介绍端口：80 服务：HTTP 说明：用于网页浏览。木马 Executor 开放此端口...</p>
+                                <div class="card-info">
+                                    <span class="date">2019-09-14</span>
+                                    <a href="#" class="category">网络知识</a>
+                                    <div class="tags">
+                                        <a href="#" class="tag">服务端口</a>
+                                        <a href="#" class="tag">服务器</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 文章卡片 9 -->
+                <div class="col s12 m6">
+                    <div class="card horizontal hoverable">
+                        <div class="card-image">
+                            <img src="images/featureimages/17.jpg">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <a href="#" class="card-title">各种实用脚本合集</a>
+                                <p class="truncate">利用 Python 一键抠图偶然发现了一个抠图的接口，还挺好用的，以后就不用打开 PS 或者抠图网站了...</p>
+                                <div class="card-info">
+                                    <span class="date">2019-09-12</span>
+                                    <a href="#" class="category">实用脚本</a>
+                                    <div class="tags">
+                                        <a href="#" class="tag">脚本</a>
+                                        <a href="#" class="tag">Script</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 文章卡片 10 -->
+                <div class="col s12 m6">
+                    <div class="card horizontal hoverable">
+                        <div class="card-image">
+                            <img src="images/featureimages/2.jpg">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <a href="#" class="card-title">Ubuntu 安装 QQ/微信/TIM 等软件</a>
+                                <p class="truncate">Ubuntu安装deepin-wine-QQ腾讯官方早就在 10 年代初就停止运营 Linux 版QQ，然而民间折腾 Linux 版 QQ 的脚步从来没停过...</p>
+                                <div class="card-info">
+                                    <span class="date">2019-09-09</span>
+                                    <a href="#" class="category">软件推荐</a>
+                                    <div class="tags">
+                                        <a href="#" class="tag">Ubuntu</a>
+                                        <a href="#" class="tag">QQ</a>
+                                        <a href="#" class="tag">Wechat</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 文章卡片 11 -->
+                <div class="col s12 m6">
+                    <div class="card horizontal hoverable">
+                        <div class="card-image">
+                            <img src="images/banner/10.jpg">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <a href="#" class="card-title">微言微语</a>
+                                <p class="truncate">记录一些杂七杂八的微言微语，毒鸡汤，泥石流，情感，思考，空想，瞎想等等</p>
+                                <div class="card-info">
+                                    <span class="date">2019-09-03</span>
+                                    <a href="#" class="category">微言微语</a>
+                                    <div class="tags">
+                                        <a href="#" class="tag">微言</a>
+                                        <a href="#" class="tag">whisper</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 文章卡片 12 -->
+                <div class="col s12 m6">
+                    <div class="card horizontal hoverable">
+                        <div class="card-image">
+                            <img src="images/featureimages/6.jpg">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <a href="#" class="card-title">测试AES加密 密码:123</a>
+                                <p class="truncate">点击此处输入正确密码即可阅读本篇文章~</p>
+                                <div class="card-info">
+                                    <span class="date">2019-08-29</span>
+                                    <a href="#" class="category">加密研究</a>
+                                    <div class="tags">
+                                        <a href="#" class="tag">加密</a>
+                                        <a href="#" class="tag">AES</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="page-footer teal lighten-1">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <p class="grey-text text-lighten-4 center-align">
+                        总访问量: <span id="busuanzi_value_site_pv">--</span> 人次 | 
+                        访客人数: <span id="busuanzi_value_site_uv">--</span> 人 | 
+                        字数统计: 46.8k 字
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container center-align">
+                © 2019 深度驿站 | Powered by Hexo | Theme Matery
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red">
+            <i class="large material-icons">arrow_upward</i>
+        </a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
