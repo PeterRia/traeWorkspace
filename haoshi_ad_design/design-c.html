@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>豪士面包 - 方案C 生活场景温馨风</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  /* ===== 海报主体 1080×1350 ===== */
+  .poster {
+    width: 540px;
+    height: 675px;
+    background: linear-gradient(160deg, #FFE8D6 0%, #FFDAB9 30%, #FFF5EE 60%, #FFF0E6 100%);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+
+  /* 阳光滤镜效果 */
+  .sunlight {
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,223,148,0.4) 0%, rgba(255,223,148,0.1) 40%, transparent 70%);
+    z-index: 1;
+    animation: sunlightPulse 6s ease-in-out infinite;
+  }
+
+  @keyframes sunlightPulse {
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+
+  /* 桌面纹理 */
+  .table-surface {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 45%;
+    background: linear-gradient(180deg,
+      rgba(180,140,100,0.05) 0%,
+      rgba(180,140,100,0.08) 20%,
+      rgba(160,120,80,0.12) 100%
+    );
+    z-index: 1;
+  }
+  .table-surface::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(90deg,
+      transparent 0px,
+      transparent 8px,
+      rgba(180,140,100,0.02) 8px,
+      rgba(180,140,100,0.02) 9px
+    );
+  }
+
+  /* 窗帘光影 */
+  .curtain-light {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35%;
+    height: 100%;
+    background: linear-gradient(90deg,
+      rgba(255,248,220,0.5) 0%,
+      rgba(255,248,220,0.3) 40%,
+      transparent 100%
+    );
+    z-index: 1;
+  }
+
+  /* 场景容器 */
+  .scene-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -40%);
+    z-index: 2;
+  }
+
+  /* 餐盘 */
+  .plate {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #FFFFFF, #F5F0EB);
+    box-shadow:
+      0 8px 25px rgba(0,0,0,0.1),
+      inset 0 -3px 8px rgba(0,0,0,0.05),
+      inset 0 3px 8px rgba(255,255,255,0.8);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 面包吐司 */
+  .toast {
+    position: absolute;
+    width: 140px;
+    height: 110px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .toast.base {
+    background: linear-gradient(145deg, #F5DEB3, #DEB887);
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  .toast.base::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 6px;
+    background:
+      radial-gradient(circle at 25% 35%, rgba(139,119,85,0.3) 2px, transparent 3px),
+      radial-gradient(circle at 55% 25%, rgba(139,119,85,0.3) 1.5px, transparent 2.5px),
+      radial-gradient(circle at 75% 50%, rgba(139,119,85,0.3) 2px, transparent 3px),
+      radial-gradient(circle at 40% 65%, rgba(139,119,85,0.3) 1.5px, transparent 2.5px),
+      radial-gradient(circle at 65% 75%, rgba(139,119,85,0.3) 2px, transparent 3px),
+      radial-gradient(circle at 20% 55%, rgba(139,119,85,0.3) 1.5px, transparent 2.5px),
+      radial-gradient(circle at 50% 45%, rgba(139,119,85,0.3) 2px, transparent 3px);
+  }
+  .toast.top {
+    background: linear-gradient(145deg, #F8E8D0, #E8C9A0);
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%) rotate(2deg);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    z-index: 1;
+  }
+  .toast.top::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  /* 黄油 */
+  .butter {
+    position: absolute;
+    top: 15px;
+    right: 40px;
+    width: 30px;
+    height: 18px;
+    background: linear-gradient(180deg, #FFE4B5, #FFD700);
+    border-radius: 3px 3px 6px 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .butter::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    right: 3px;
+    height: 4px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 2px;
+  }
+
+  /* 牛奶杯 */
+  .milk {
+    position: absolute;
+    right: -60px;
+    bottom: 30px;
+    width: 50px;
+    height: 90px;
+    background: linear-gradient(180deg, #FFFFFF, #F0F0F0);
+    border-radius: 4px 4px 8px 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  .milk::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -5px;
+    right: -5px;
+    height: 12px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 6px;
+    border: 1px solid #E0E0E0;
+  }
+  .milk::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    right: 5px;
+    bottom: 15px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(240,240,240,0.9));
+    border-radius: 2px;
+  }
+
+  /* 咖啡杯 */
+  .coffee {
+    position: absolute;
+    left: -50px;
+    bottom: 40px;
+  }
+  .coffee-cup {
+    width: 60px;
+    height: 45px;
+    background: linear-gradient(180deg, #FFFFFF, #F5F5F5);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: relative;
+  }
+  .coffee-cup::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -3px;
+    right: -3px;
+    height: 10px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 5px;
+    border: 1px solid #E8E8E8;
+  }
+  .coffee-cup::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 8px;
+    background: linear-gradient(180deg, #8B6914, #6B4F12);
+    border-radius: 2px;
+  }
+  .coffee-plate {
+    width: 70px;
+    height: 8px;
+    background: linear-gradient(180deg, #FFFFFF, #E8E8E8);
+    border-radius: 50%;
+    margin-top: -2px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  }
+  /* 杯把手 */
+  .coffee-handle {
+    position: absolute;
+    right: -12px;
+    top: 5px;
+    width: 15px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,0.8);
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+  }
+
+  /* 水果装饰 */
+  .fruit {
+    position: absolute;
+    border-radius: 50%;
+  }
+  .strawberry {
+    width: 22px;
+    height: 24px;
+    background: linear-gradient(180deg, #FF6B6B, #E55555);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    left: -70px;
+    bottom: 80px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .strawberry::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 4px;
+    width: 14px;
+    height: 6px;
+    background: #4CAF50;
+    border-radius: 50%;
+  }
+  .blueberry {
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(180deg, #6C63FF, #4834D4);
+    position: absolute;
+    right: -80px;
+    bottom: 60px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .blueberry::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 4px;
+    height: 4px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+  }
+
+  /* 品牌顶部 */
+  .brand-top {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 3;
+  }
+  .brand-logo {
+    width: 24px;
+    height: 24px;
+    background: #3D2B1F;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #F5E6D3;
+    font-size: 11px;
+    font-weight: 900;
+    margin-bottom: 4px;
+  }
+  .brand-text {
+    font-size: 12px;
+    color: #8B7355;
+    letter-spacing: 6px;
+    font-weight: 500;
+  }
+
+  /* 顶部早安文字 */
+  .greeting {
+    position: absolute;
+    top: 65px;
+    left: 40px;
+    z-index: 3;
+    color: #C4956A;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 3px;
+  }
+  .greeting .emoji {
+    font-size: 16px;
+    margin-right: 6px;
+  }
+
+  /* 底部文案区 */
+  .text-area {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 40px 30px;
+    background: linear-gradient(to top, rgba(255,245,238,0.95), rgba(255,245,238,0));
+    z-index: 3;
+    text-align: center;
+  }
+
+  .main-headline {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #4E342E;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+  }
+  .main-headline .dot {
+    color: #FF8A65;
+  }
+
+  .sub-headline {
+    font-size: 14px;
+    color: #A89580;
+    letter-spacing: 4px;
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+
+  /* 营养标签 */
+  .nutrition-tags {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 16px;
+  }
+  .nut-tag {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 20px;
+    font-size: 12px;
+    color: #8B7355;
+    letter-spacing: 1px;
+  }
+  .nut-tag .icon {
+    font-size: 14px;
+  }
+
+  /* 底部品牌 */
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #C4A882;
+  }
+  .footer-logo {
+    width: 18px;
+    height: 18px;
+    background: #3D2B1F;
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #F5E6D3;
+    font-size: 9px;
+    font-weight: 900;
+  }
+  .footer-name {
+    font-size: 12px;
+    letter-spacing: 5px;
+    font-weight: 500;
+  }
+
+  /* 装饰元素 */
+  .deco-star {
+    position: absolute;
+    z-index: 1;
+    font-size: 10px;
+    color: rgba(255,200,100,0.3);
+  }
+  .deco-star:nth-child(1) { top: 120px; left: 60px; animation: twinkle 3s ease-in-out infinite; }
+  .deco-star:nth-child(2) { top: 200px; right: 80px; animation: twinkle 3s ease-in-out infinite 1s; }
+  .deco-star:nth-child(3) { top: 300px; left: 40px; animation: twinkle 3s ease-in-out infinite 2s; }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.3); }
+  }
+
+  /* 蒸汽效果 */
+  .steam {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+  .steam-line {
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background: linear-gradient(to top, rgba(255,255,255,0.4), transparent);
+    border-radius: 1px;
+    animation: steamRise 2s ease-out infinite;
+  }
+  .steam-line:nth-child(1) { left: -10px; animation-delay: 0s; }
+  .steam-line:nth-child(2) { left: 0px; animation-delay: 0.5s; }
+  .steam-line:nth-child(3) { left: 10px; animation-delay: 1s; }
+
+  @keyframes steamRise {
+    0% { transform: translateY(0) scaleX(1); opacity: 0.6; }
+    50% { transform: translateY(-15px) scaleX(1.5); opacity: 0.3; }
+    100% { transform: translateY(-30px) scaleX(2); opacity: 0; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="poster">
+  <!-- 阳光效果 -->
+  <div class="sunlight"></div>
+  <div class="curtain-light"></div>
+  <div class="table-surface"></div>
+
+  <!-- 闪烁装饰 -->
+  <div class="deco-star">✦</div>
+  <div class="deco-star">✦</div>
+  <div class="deco-star">✦</div>
+
+  <!-- 品牌顶部 -->
+  <div class="brand-top">
+    <div class="brand-logo">豪</div>
+    <div class="brand-text">豪 士</div>
+  </div>
+
+  <div class="greeting">
+    <span class="emoji">☀</span> GOOD MORNING
+  </div>
+
+  <!-- 场景容器 -->
+  <div class="scene-container">
+    <div class="plate">
+      <!-- 蒸汽 -->
+      <div class="steam">
+        <div class="steam-line"></div>
+        <div class="steam-line"></div>
+        <div class="steam-line"></div>
+      </div>
+
+      <!-- 吐司 -->
+      <div class="toast base"></div>
+      <div class="toast top"></div>
+
+      <!-- 黄油 -->
+      <div class="butter"></div>
+
+      <!-- 牛奶杯 -->
+      <div class="milk"></div>
+
+      <!-- 咖啡杯 -->
+      <div class="coffee">
+        <div class="coffee-cup">
+          <div class="coffee-handle"></div>
+        </div>
+        <div class="coffee-plate"></div>
+      </div>
+
+      <!-- 水果 -->
+      <div class="fruit strawberry"></div>
+      <div class="fruit blueberry"></div>
+    </div>
+  </div>
+
+  <!-- 底部文案 -->
+  <div class="text-area">
+    <div class="main-headline">
+      早安<span class="dot">.</span>从一份健康开始
+    </div>
+    <div class="sub-headline">豪士藜麦吐司 · 营养早餐新选择</div>
+
+    <div class="nutrition-tags">
+      <div class="nut-tag"><span class="icon">🌾</span>藜麦添加</div>
+      <div class="nut-tag"><span class="icon">⏱</span>便捷早餐</div>
+      <div class="nut-tag"><span class="icon">❤</span>全家都爱</div>
+    </div>
+
+    <div class="footer-brand">
+      <span class="footer-logo">豪</span>
+      <span class="footer-name">豪士</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

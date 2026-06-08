@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>豪士面包 - 方案A 社交媒体健康风</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @font-face {
+    font-family: 'SerifZH';
+    src: local('Noto Serif SC');
+  }
+
+  body {
+    background: #2a2a2a;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  /* ===== 海报主体 1080×1920 ===== */
+  .poster {
+    width: 540px;
+    height: 960px;
+    background: linear-gradient(175deg, #FFF8F0 0%, #F5E6D3 30%, #EDE0D0 60%, #F8EDE3 100%);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+
+  /* 藜麦谷物质感装饰 */
+  .poster::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -80px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(143,188,143,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .poster::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: -60px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(212,165,116,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  /* 顶部装饰纹理 */
+  .grain-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* 顶部品牌区 */
+  .brand-area {
+    padding: 40px 40px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 2;
+  }
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+    background: #3D2B1F;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F5E6D3;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
+  .brand-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #3D2B1F;
+    letter-spacing: 6px;
+  }
+
+  /* 产品核心区 */
+  .product-area {
+    padding: 30px 40px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* 产品圆形画框 */
+  .product-frame {
+    width: 320px;
+    height: 320px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #F5E6D3, #EDE0D0, #F0DCC8);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+      0 15px 40px rgba(61,43,31,0.1),
+      inset 0 -5px 15px rgba(212,165,116,0.2),
+      inset 0 5px 15px rgba(255,255,255,0.3);
+    overflow: hidden;
+  }
+  .product-frame::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.4);
+  }
+
+  /* 面包切片模拟 */
+  .bread-visual {
+    position: relative;
+    width: 200px;
+    height: 200px;
+  }
+
+  /* 面包主体 */
+  .bread-slice {
+    position: absolute;
+    width: 160px;
+    height: 140px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  }
+  .bread-slice.front {
+    background: linear-gradient(145deg, #F5DEB3, #DEB887, #D2A86E);
+    top: 30px;
+    left: 20px;
+    z-index: 2;
+    transform: rotate(-5deg);
+  }
+  .bread-slice.front::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background:
+      radial-gradient(circle at 30% 40%, rgba(139,119,85,0.4) 2px, transparent 3px),
+      radial-gradient(circle at 60% 30%, rgba(139,119,85,0.3) 1.5px, transparent 2.5px),
+      radial-gradient(circle at 45% 60%, rgba(139,119,85,0.35) 2px, transparent 3px),
+      radial-gradient(circle at 70% 55%, rgba(139,119,85,0.3) 1.5px, transparent 2.5px),
+      radial-gradient(circle at 25% 70%, rgba(139,119,85,0.4) 2px, transparent 3px),
+      radial-gradient(circle at 50% 80%, rgba(139,119,85,0.3) 1.5px, transparent 2.5px),
+      radial-gradient(circle at 80% 35%, rgba(139,119,85,0.35) 2px, transparent 3px),
+      radial-gradient(circle at 40% 20%, rgba(139,119,85,0.3) 1.5px, transparent 2.5px),
+      radial-gradient(circle at 65% 70%, rgba(139,119,85,0.4) 2px, transparent 3px);
+  }
+  .bread-slice.back {
+    background: linear-gradient(145deg, #E8C9A0, #D4B08A);
+    top: 20px;
+    left: 10px;
+    z-index: 1;
+    transform: rotate(3deg);
+  }
+
+  /* 拉丝效果 */
+  .stretch-line {
+    position: absolute;
+    width: 2px;
+    background: linear-gradient(to bottom, rgba(245,222,179,0.8), rgba(245,222,179,0.3));
+    z-index: 3;
+  }
+  .stretch-line:nth-child(1) { height: 60px; left: 50px; top: 140px; transform: rotate(15deg); }
+  .stretch-line:nth-child(2) { height: 50px; left: 80px; top: 140px; transform: rotate(-10deg); }
+  .stretch-line:nth-child(3) { height: 70px; left: 110px; top: 140px; transform: rotate(5deg); }
+
+  /* 藜麦装饰元素 */
+  .quinoa-deco {
+    position: absolute;
+    z-index: 2;
+  }
+  .quinoa-deco.top-left {
+    top: 280px;
+    left: 30px;
+  }
+  .quinoa-deco.top-right {
+    top: 260px;
+    right: 20px;
+  }
+  .quinoa-deco.bottom-left {
+    bottom: 200px;
+    left: 20px;
+  }
+  .quinoa-deco.bottom-right {
+    bottom: 220px;
+    right: 30px;
+  }
+  .quinoa {
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle at 30% 30%, #A8D5A2, #6B9B63);
+    border-radius: 50%;
+    display: inline-block;
+    margin: 2px;
+  }
+
+  /* 产品标题 */
+  .product-name {
+    font-size: 28px;
+    font-weight: 900;
+    color: #3D2B1F;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+  }
+  .product-sub {
+    font-size: 14px;
+    color: #8B7355;
+    letter-spacing: 6px;
+    font-weight: 300;
+  }
+
+  /* 主标题 */
+  .headline-area {
+    padding: 16px 40px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  .main-headline {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-size: 38px;
+    font-weight: 900;
+    color: #3D2B1F;
+    line-height: 1.3;
+    letter-spacing: 3px;
+  }
+  .main-headline .highlight {
+    color: #8FBC8F;
+    position: relative;
+  }
+  .main-headline .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(143,188,143,0.4), transparent);
+  }
+  .sub-headline {
+    font-size: 16px;
+    color: #8B7355;
+    margin-top: 12px;
+    letter-spacing: 4px;
+    font-weight: 300;
+  }
+
+  /* 卖点图标区 */
+  .selling-points {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    padding: 24px 40px;
+    position: relative;
+    z-index: 2;
+  }
+  .point-item {
+    text-align: center;
+  }
+  .point-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(143,188,143,0.15), rgba(143,188,143,0.05));
+    border: 1.5px solid rgba(143,188,143,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px;
+    font-size: 22px;
+  }
+  .point-text {
+    font-size: 13px;
+    font-weight: 700;
+    color: #3D2B1F;
+    letter-spacing: 2px;
+  }
+  .point-desc {
+    font-size: 11px;
+    color: #A89580;
+    margin-top: 2px;
+    letter-spacing: 1px;
+  }
+
+  /* 底部品牌区 */
+  .footer-brand {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 2;
+    padding: 0 40px;
+  }
+  .footer-logo {
+    width: 28px;
+    height: 28px;
+    background: #3D2B1F;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #F5E6D3;
+    font-size: 12px;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  .footer-brand-name {
+    font-size: 14px;
+    color: #8B7355;
+    letter-spacing: 8px;
+    font-weight: 500;
+  }
+  .footer-slogan {
+    font-size: 11px;
+    color: #C4B5A3;
+    letter-spacing: 3px;
+    margin-top: 4px;
+  }
+
+  /* 装饰线条 */
+  .deco-line {
+    position: absolute;
+    z-index: 1;
+  }
+  .deco-line.top {
+    top: 100px;
+    left: 40px;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #D4A574, transparent);
+  }
+  .deco-line.bottom {
+    bottom: 80px;
+    right: 40px;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(270deg, #D4A574, transparent);
+  }
+
+  /* 装饰麦穗 */
+  .wheat-deco {
+    position: absolute;
+    z-index: 1;
+    font-size: 40px;
+    opacity: 0.08;
+  }
+  .wheat-deco.left { left: 20px; top: 350px; transform: rotate(-15deg); }
+  .wheat-deco.right { right: 20px; bottom: 280px; transform: rotate(15deg) scaleX(-1); }
+
+</style>
+</head>
+<body>
+
+<div class="poster">
+  <!-- 纹理叠加 -->
+  <div class="grain-overlay"></div>
+
+  <!-- 装饰线条 -->
+  <div class="deco-line top"></div>
+  <div class="deco-line bottom"></div>
+
+  <!-- 装饰麦穗 -->
+  <div class="wheat-deco left">🌾</div>
+  <div class="wheat-deco right">🌾</div>
+
+  <!-- 藜麦装饰 -->
+  <div class="quinoa-deco top-left">
+    <span class="quinoa"></span><span class="quinoa"></span><span class="quinoa"></span>
+    <span class="quinoa"></span><span class="quinoa"></span>
+  </div>
+  <div class="quinoa-deco top-right">
+    <span class="quinoa"></span><span class="quinoa"></span><span class="quinoa"></span>
+    <span class="quinoa"></span><span class="quinoa"></span>
+  </div>
+  <div class="quinoa-deco bottom-left">
+    <span class="quinoa"></span><span class="quinoa"></span><span class="quinoa"></span>
+    <span class="quinoa"></span>
+  </div>
+  <div class="quinoa-deco bottom-right">
+    <span class="quinoa"></span><span class="quinoa"></span><span class="quinoa"></span>
+    <span class="quinoa"></span>
+  </div>
+
+  <!-- 顶部品牌区 -->
+  <div class="brand-area">
+    <div class="brand-logo">豪</div>
+    <span class="brand-name">豪士</span>
+  </div>
+
+  <!-- 产品核心区 -->
+  <div class="product-area">
+    <div class="product-frame">
+      <div class="bread-visual">
+        <div class="bread-slice back"></div>
+        <div class="bread-slice front"></div>
+        <div class="stretch-line"></div>
+        <div class="stretch-line"></div>
+        <div class="stretch-line"></div>
+      </div>
+    </div>
+    <div class="product-name">豪士藜麦吐司</div>
+    <div class="product-sub">QUINOA TOAST</div>
+  </div>
+
+  <!-- 主标题区 -->
+  <div class="headline-area">
+    <div class="main-headline">
+      每一口 都是<br><span class="highlight">健康</span>的味道
+    </div>
+    <div class="sub-headline">营养美味 不妥协</div>
+  </div>
+
+  <!-- 卖点区 -->
+  <div class="selling-points">
+    <div class="point-item">
+      <div class="point-icon">✓</div>
+      <div class="point-text">0反式脂肪酸</div>
+      <div class="point-desc">健康无负担</div>
+    </div>
+    <div class="point-item">
+      <div class="point-icon">🌾</div>
+      <div class="point-text">藜麦添加</div>
+      <div class="point-desc">超级谷物</div>
+    </div>
+    <div class="point-item">
+      <div class="point-icon">☁</div>
+      <div class="point-text">松软拉丝</div>
+      <div class="point-desc">绵密口感</div>
+    </div>
+  </div>
+
+  <!-- 底部品牌区 -->
+  <div class="footer-brand">
+    <div class="footer-logo">豪</div>
+    <div class="footer-brand-name">豪士</div>
+    <div class="footer-slogan">好面包 豪士造</div>
+  </div>
+</div>
+
+</body>
+</html>
