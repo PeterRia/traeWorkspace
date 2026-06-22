@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "created_at": "2026-06-22 13:51:56",
+  "updated_at": "2026-06-22 06:14:40",
+  "settings": {
+    "difficulty": 3,
+    "image_id": "star_lighthouse",
+    "sound": true,
+    "volume": 0.65
+  },
+  "gallery": {
+    "imagegen_cover": {
+      "unlocked": true,
+      "completed": 1,
+      "title": "幻彩拼图门"
+    },
+    "star_lighthouse": {
+      "unlocked": true,
+      "completed": 0,
+      "title": "星海灯塔"
+    },
+    "peach_path": {
+      "unlocked": false,
+      "completed": 0,
+      "title": "桃源山径"
+    },
+    "ancient_market": {
+      "unlocked": false,
+      "completed": 0,
+      "title": "古城夜市"
+    },
+    "mechanical_garden": {
+      "unlocked": false,
+      "completed": 0,
+      "title": "机械花园"
+    },
+    "candy_cosmos": {
+      "unlocked": false,
+      "completed": 0,
+      "title": "糖果宇宙"
+    },
+    "quiet_study": {
+      "unlocked": false,
+      "completed": 0,
+      "title": "书房时光"
+    }
+  },
+  "rankings": {
+    "imagegen_cover|3|standard": {
+      "image_id": "imagegen_cover",
+      "difficulty": "3",
+      "mode": "standard",
+      "completed": 1,
+      "best_time": 52,
+      "min_steps": 26,
+      "best_rating": "S"
+    }
+  },
+  "achievements": {
+    "first_win": {
+      "title": "初次复原",
+      "desc": "完成任意一局拼图",
+      "unlocked_at": "2026-06-22 06:13:11"
+    },
+    "no_hint": {
+      "title": "独立完成",
+      "desc": "不使用提示完成一局",
+      "unlocked_at": "2026-06-22 06:13:11"
+    },
+    "swift_3": {
+      "title": "三阶疾行",
+      "desc": "60 秒内完成 3x3",
+      "unlocked_at": "2026-06-22 06:13:11"
+    },
+    "steady_hands": {
+      "title": "稳扎稳打",
+      "desc": "步数不超过格子数的 8 倍",
+      "unlocked_at": "2026-06-22 06:13:11"
+    }
+  },
+  "history": [
+    {
+      "finished_at": "2026-06-22 06:13:11",
+      "image_id": "imagegen_cover",
+      "image_title": "幻彩拼图门",
+      "difficulty": "3",
+      "mode": "standard",
+      "elapsed": 52,
+      "steps": 26,
+      "hints": 0,
+      "rating": "S",
+      "score_card": "F:\\python\\TreaWorkSpace\\pintuGame\\puzzle_game\\dist\\PuzzleGame\\screenshots\\score_20260622_061311.png"
+    }
+  ]
+}
