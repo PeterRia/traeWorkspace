@@ -21,6 +21,9 @@
 │   └── FLASK_LEARNING_PPT.md      # PPT 文稿
 ├── Vibe_Coding_Learning/     # Vibe Coding 系统化学习
 ├── github-learning/          # GitHub 学习指南
+├── haoshi_ad_design/         # 豪士广告设计项目
+├── my-blog/                  # 个人博客项目
+├── pintuGame/                # 拼图游戏项目
 ├── pyproject.toml            # uv 项目配置
 └── README.md                 # 项目总览
 ```
@@ -62,11 +65,35 @@ GitHub 使用指南，包含版本控制基础和协作开发知识。
 基于 Easy-Vibe 官方教程的系统化 Vibe Coding 学习路径，覆盖从零基础到高级开发。
 
 **学习资源：**
-- � 学习总览：`Vibe_Coding_Learning/README.md`
+- 📖 学习总览：`Vibe_Coding_Learning/README.md`
+
+### 4. 豪士广告设计项目
+
+广告设计展示页面项目，包含多个设计方案展示。
+
+**学习资源：**
+- 📄 项目说明：`haoshi_ad_design/READ.ME`
+
+### 5. 个人博客项目
+
+个人博客网站项目，包含响应式设计和动态交互效果。
+
+**学习资源：**
+- 📄 技术栈分析：`my-blog/技术栈分析.md`
+- 📄 页面细节：`my-blog/页面细节记录.md`
+
+### 6. 拼图游戏项目
+
+基于 Pygame 开发的拼图游戏，包含多种主题和音效。
+
+**学习资源：**
+- 📖 项目说明：`pintuGame/README.md`
+- 📄 设计文档：`pintuGame/09_原始设计文档_整理版.md`
+- 📄 玩家手册：`pintuGame/06_玩家使用手册模板.md`
 
 ---
 
-## �️ 环境要求
+## 🛠️ 环境要求
 
 - Python 3.8+
 - [uv](https://docs.astral.sh/uv/) 包管理器
@@ -83,7 +110,7 @@ powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-## � 快速开始
+## 🚀 快速开始
 
 ```bash
 # 1. 克隆项目

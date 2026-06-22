@@ -30,9 +30,9 @@
 
 ### 1. Trae CN 配置
 
-![Trae CN 配置截图1](image-3.png)
+![Trae CN 配置截图1](image-1.png)
 
-![Trae CN 配置截图2](image-4.png)
+![Trae CN 配置截图2](image-2.png)
 
 
 **需要填入的信息：**
